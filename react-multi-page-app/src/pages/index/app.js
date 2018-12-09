@@ -7,6 +7,7 @@
 
 import React, { Component } from "react";
 import Nav from "component/nav";
+import Footer from "component/footer"
 export default class App extends Component {
 	render() {
 		return (
@@ -45,9 +46,10 @@ export default class App extends Component {
 						$ npm start
 					</pre>
 					<p className="mt20">Automatically open browser with <a href="http://localhost:3100">http://localhost:3100</a></p>
-					<p className="mt20"><a href="https://github.com/leinov/webpack-react-multi-page">view more in github</a></p>
 				</div>
+				<Footer />
 			</div>
+			
 		);
 	}
 }
