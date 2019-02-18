@@ -24,11 +24,16 @@
     display: inline-block;
 }
 
-#font {
-    margin-top: 220px;
+.font {
     font-size: 30px;
 }
-
+#checkfont{
+    font-size: 30px;
+}
+#loadding{
+    margin-top: 220px;
+    visibility: hidden;
+}
 @font-face {
     font-family: weiruanyahei;
     src: url('font/微软雅黑.ttf'),
@@ -129,7 +134,4 @@
 .TimesNewRoman {
     font-family: TimesNewRoman;
 }
-
-option {
-    border: 1px solid red;
-}
+ 

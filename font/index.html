@@ -13,8 +13,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>字体测试@font-face</title>
-    <link rel="stylesheet" href="font.css?v=0.2" />
+    <link rel="stylesheet" href="font.css?v=0.3" />
 </head>
+<style>
+    #checkfont {
+        visibility: hidden;
+    }
+</style>
 
 <body>
     <div class="main">
@@ -32,20 +37,65 @@
             <option value="ComicSansMS">Comic Sans MS</option>
             <option value="TimesNewRoman">Times New Roman</option>
         </select>
-        <div id="font" class="">看！现在的字体是：<span id="setfont">微软雅黑</span> 123456789</div>
-    </div>
-    <script>
-        document.getElementById("select").onclick = function (event) {
-            let index = this.selectedIndex,
-                value = this.options[index].value,
-                text = this.options[index].text;
-            console.log(+ new Date());
-            document.getElementById("font").classList = value;
-            console.log(+ new Date());
-            document.getElementById("setfont").innerHTML = text;
-            console.log(+ new Date());
-        }
-    </script>
+        <div id="loadding">字体加载中.......</div>
+        <div class="font"><span id="font">看！我的字体变了12345-zyb</span></div>
+        <div><span id="checkfont">看！我的字体变了12345-zyb</span></div>
+
+        <script>
+            // 入栈比值
+            var valueStack = [];
+
+            function checkOnce(value) {
+                if (valueStack.length < 1) {
+                    valueStack.push(value);
+
+                    return null;
+                } else if (valueStack.length == 1) {
+                    if (valueStack[0] === value) {
+                        return null;
+                    }
+                    valueStack.push(value);
+                    return true;
+                } else {
+                    valueStack.shift();
+                    valueStack.push(value);
+                    if (valueStack[0] === valueStack[1]) {
+                        return null;
+                    } else {
+                        return true;
+                    }
+                }
+            }
+            // 字体切换
+            function changeFont() {
+                document.getElementById("select").onclick = function (event) {
+                    let index = this.selectedIndex,
+                        value = this.options[index].value,
+                        text = this.options[index].text,
+                        isTrue = checkOnce(index);
+                    if (!isTrue) {
+                        return
+                    }
+                    document.getElementById("font").style.visibility = "hidden";
+                    document.getElementById("loadding").style.visibility = "visible";
+                    // 设置比较字宽度
+                    var checkWidth = document.getElementById("checkfont").offsetWidth;
+                    // 加载字体
+                    document.getElementById("font").classList = value;
+                    // 每100毫秒检查一次是否加载
+                    var checkFont = setInterval(function () {
+                        var curWidth = document.getElementById("font").offsetWidth;
+                        if (curWidth != checkWidth) {
+                            document.getElementById("loadding").style.visibility = "hidden";
+                            document.getElementById("font").style.visibility = "visible";
+                        }
+                        clearInterval(checkFont)
+                    }, 100);
+
+                }
+            }
+            changeFont();
+        </script>
 </body>
 
 </html>
