@@ -1,31 +1,135 @@
+/***
+ * @file:font.css
+ * @desc:'这是font-face字体'
+ * @author:leinov
+ * @date:2019-02-18
+ */
+
+.main {
+    padding: 30px 100px;
+    width: 80%;
+    margin: auto;
+    max-width: 980px;
+}
+
+#select {
+    position: relative;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 5px 10px;
+    font-size: 14px;
+    background: #f8f8f8;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px #999;
+    display: inline-block;
+}
+
+#font {
+    margin-top: 220px;
+    font-size: 30px;
+}
+
+@font-face {
+    font-family: weiruanyahei;
+    src: url('font/微软雅黑.ttf'),
+}
+
 @font-face {
     font-family: fangsong;
     src: url('font/仿宋.ttf'),
 }
 
 @font-face {
-    font-family: huawenxingkai;
-    src: url('font/华文行楷.ttf'),
+    font-family: kaiti;
+    src: url('font/楷体.ttf'),
 }
-@font-face {
-    font-family: weiruanyahei;
-    src: url('font/微软雅黑.ttf'),
-}
+
+
 @font-face {
     font-family: lvshu;
     src: url('font/隶书.TTF'),
 }
 
-.fangsong{
-    font-family: fangsong;
-}
-.huawenxingkai{
-    font-family: huawenxingkai;
-}
-.weiruanyahei{
-    font-family: weiruanyahei;
-}
-.lvshu{
-    font-family: lvshu ;
+@font-face {
+    font-family: youyuan;
+    src: url('font/幼圆.TTF')
 }
 
+@font-face {
+    font-family: liugongquan;
+    src: url('font/柳公权柳体.ttf')
+}
+
+@font-face {
+    font-family: huawenxingkai;
+    src: url('font/华文行楷.ttf');
+}
+
+@font-face {
+    font-family: Arial;
+    src: url('font/Arial.ttf'),
+}
+
+@font-face {
+    font-family: Calibri;
+    src: url("font/Calibri.ttf")
+}
+
+@font-face {
+    font-family: ComicSansMS;
+    src: url('font/ComicSansMS.ttf');
+}
+
+@font-face {
+    font-family: TimesNewRoman;
+    src: url('font/TimesNewRoman.ttf');
+}
+
+
+.Arial {
+    font-family: Arial;
+}
+
+.Calibri {
+    font-family: Calibri;
+}
+
+.fangsong {
+    font-family: fangsong;
+}
+
+.kaiti {
+    font-family: kaiti;
+}
+
+.weiruanyahei {
+    font-family: weiruanyahei;
+}
+
+.youyuan {
+    font-family: youyuan;
+}
+
+.lvshu {
+    font-family: lvshu;
+}
+
+.liugongquan {
+    font-family: liugongquan;
+}
+
+.huawenxingkai {
+    font-family: huawenxingkai;
+}
+
+.ComicSansMS {
+    font-family: ComicSansMS;
+}
+
+.TimesNewRoman {
+    font-family: TimesNewRoman;
+}
+
+option {
+    border: 1px solid red;
+}

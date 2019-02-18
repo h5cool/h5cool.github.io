@@ -1,3 +1,10 @@
+<!--
+    @file: font
+    @desc:设置font-face字体
+    @author:leinov
+    @date:2019-02-18
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,107 +12,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>font-face 字体测试</title>
-    <link rel="stylesheet" href="font.css">
-    </link>
-    <style>
-        .main {
-            padding: 100px;
-        }
-
-        .select {
-
-            top: 100%;
-            border: 1px solid #e4e4e4;
-            color: #333;
-            padding: 5px 10px;
-            font-size: 16px;
-        }
-
-        #font {
-            margin-top: 130px;
-        }
-
-        @font-face {
-            font-family: fangsong;
-            src: url('font/仿宋.ttf'),
-        }
-
-        @font-face {
-            font-family: kaiti;
-            src: url('font/楷体.ttf'),
-        }
-
-        @font-face {
-            font-family: weiruanyahei;
-            src: url('font/微软雅黑.ttf'),
-        }
-
-        @font-face {
-            font-family: lvshu;
-            src: url('font/隶书.TTF'),
-        }
-
-        @font-face {
-            font-family: Arial;
-            src: url('font/Arial.ttf'),
-        }
-
-        @font-face {
-            font-family: Calibri;
-            src: url("font/Calibri.ttf")
-        }
-
-        .Arial {
-            font-family: Arial;
-        }
-
-        .Calibri {
-            font-family: Calibri;
-        }
-
-        .fangsong {
-            font-family: fangsong;
-        }
-
-        .kaiti {
-            font-family: kaiti;
-        }
-
-        .weiruanyahei {
-            font-family: weiruanyahei;
-        }
-
-        .lvshu {
-            font-family: lvshu;
-        }
-    </style>
+    <title>字体测试@font-face</title>
+    <link rel="stylesheet" href="font.css" />
 </head>
 
 <body>
-
     <div class="main">
         选择字体:
-        <select class="select" style="top: 100%;">
-            <option class="zyb-dropdown-item" value="weiruanyahei">微软雅黑</option>
-            <option class="zyb-dropdown-item" value="fangsong">宋体</option>
-            <option class="zyb-dropdown-item" value="kaiti">楷体</option>
-            <option class="zyb-dropdown-item" value="Arial">Arial</option>
-            <option class="zyb-dropdown-item" value="Calibri">Calibri</option>
+        <select id="select" style="top: 100%;">
+            <option value="weiruanyahei">微软雅黑</option>
+            <option value="fangsong">宋体</option>
+            <option value="kaiti">楷体</option>
+            <option value="youyuan">幼圆</option>
+            <option value="lvshu">隶书</option>
+            <option value="liugongquan">柳公权柳体</option>
+            <option value="huawenxingkai">华文行楷</option>
+            <option value="Arial">Arial</option>
+            <option value="Calibri">Calibri</option>
+            <option value="ComicSansMS">Comic Sans MS</option>
+            <option value="TimesNewRoman">Times New Roman</option>
         </select>
-
-        <div id="font">看！我的字体成<span id="setfont">微软雅黑</span></div>
+        <div id="font" class="">看！现在的字体是：<span id="setfont">微软雅黑</span> 123456789</div>
     </div>
-
-    <script src="dom.js"></script>
     <script>
-        dom.query(".select").onclick = function (event) {
-            console.log(this);
+        document.getElementById("select").onclick = function (event) {
             let index = this.selectedIndex,
                 value = this.options[index].value,
                 text = this.options[index].text;
-            dom.query("#font").classList = value;
-            dom.query("#setfont").innerHTML= text;
+            document.getElementById("font").classList = value;
+            document.getElementById("setfont").innerHTML = text;
         }
     </script>
 </body>
