@@ -72,19 +72,20 @@
                         return
                     }
                    // document.getElementById("font").style.visibility = "hidden";
-                    document.getElementById("loadding").style.visibility = "visible";
+                   // document.getElementById("loadding").style.visibility = "visible";
                     // 设置比较字宽度
                     var checkWidth = document.getElementById("checkfont").offsetWidth;
                     // 加载字体
                     document.getElementById("font").classList = value;
                     // 每100毫秒检查一次是否加载
                     var checkFont = setInterval(function () {
+                        console.log();
                         var curWidth = document.getElementById("font").offsetWidth;
                         if (curWidth != checkWidth) {
                             document.getElementById("loadding").style.visibility = "hidden";
                             document.getElementById("font").style.visibility = "visible";
                         }
-                        clearInterval(checkFont)
+                       // clearInterval(checkFont)
                     }, 100);
                 }
             }
