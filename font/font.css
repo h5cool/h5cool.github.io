@@ -23,17 +23,19 @@
     box-shadow: 0px 0px 2px #999;
     display: inline-block;
 }
-
-.font {
+#font{
     font-size: 30px;
+    width: 60%;
+    min-height: 400px;
 }
+ 
 #checkfont {
     font-size: 30px;
     visibility: hidden;
 }
 
 #loadding {
-    margin-top: 220px;
+    margin-top: 120px;
     visibility: hidden;
 }
 
@@ -49,13 +51,13 @@
 
 @font-face {
     font-family: kaiti;
-    src: url('font/楷体.ttf');
+    src: url('https://yy-s.zuoyebang.cc/static/lemon/font/kt.ttf') /* url('font/楷体.ttf');*/
 }
 
 
 @font-face {
     font-family: lvshu;
-    src: url('font/隶书.TTF');
+    src:url('https://yy-s.zuoyebang.cc/static/lemon/font/ls.TTF'); /*url('font/隶书.TTF');*/
 }
 
 @font-face {
@@ -65,10 +67,13 @@
 
 @font-face {
     font-family: liugongquan;
-    src: url('font/柳公权柳体.ttf');
+    src: url('https://yy-s.zuoyebang.cc/static/lemon/font/lgqlt.ttf') /*url('font/柳公权柳体.ttf');*/
 }
 
-
+@font-face{
+    font-family: fangzhengqingke;
+    src:url('https://yy-s.zuoyebang.cc/static/lemon/font/fzqk.TTF') /*方正清刻*/
+}
 
 @font-face {
     font-family: Arial;
@@ -77,9 +82,14 @@
 
 @font-face {
     font-family: huawenxingkai;
-    src: url('font/华文行楷.TTF');
+    src:url('https://yy-s.zuoyebang.cc/static/lemon/font/hwxk.TTF');/* url('font/华文行楷.TTF');*/
+   
 }
-
+@font-face {
+    font-family: hwxw;
+    src:url('https://yy-s.zuoyebang.cc/static/lemon/font/hwxw.TTF');/* url('font/华文新魏.TTF');*/
+   
+}
 @font-face {
     font-family: Calibri;
     src: url("font/Calibri.ttf");
@@ -94,7 +104,10 @@
     font-family: TimesNewRoman;
     src: url('font/TimesNewRoman.ttf');
 }
-
+@font-face{
+    font-family: fzzdhjt;
+    src:url('https://yy-s.zuoyebang.cc/static/lemon/font/fzzdhjt.ttf')
+}
 
 .Arial {
     font-family: Arial;
@@ -138,4 +151,13 @@
 
 .TimesNewRoman {
     font-family: TimesNewRoman;
+}
+.fangzhengqingke{
+    font-family: fangzhengqingke;
+}
+.fzzdhjt{
+    font-family: fzzdhjt;
+}
+.hwxw{
+    font-family: hwxw;
 }

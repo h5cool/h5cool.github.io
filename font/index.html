@@ -20,20 +20,25 @@
         选择字体:
         <select id="select" style="top: 100%;">
             <option value="weiruanyahei">微软雅黑</option>
-            <option value="fangsong">仿宋</option>
-            <option value="kaiti">楷体</option>
-            <option value="youyuan">幼圆</option>
-            <option value="lvshu">隶书</option>
+            <option value="fangzhengqingke">方正清刻本悦宋简体</option>
+            <option value="fzzdhjt">方正正大黑简体</option>
             <option value="liugongquan">柳公权柳体</option>
             <option value="huawenxingkai">华文行楷</option>
+            <option value="kaiti">楷体</option>
+
+            <option value="fangsong">仿宋</option>
+            <option value="youyuan">幼圆</option>
+            <option value="lvshu">隶书</option>
+            <option value="hwxw">华文新魏</option>
+          
             <option value="Arial">Arial</option>
             <option value="Calibri">Calibri</option>
             <option value="ComicSansMS">Comic Sans MS</option>
             <option value="TimesNewRoman">Times New Roman</option>
         </select>
         <div id="loadding">字体加载中.......</div>
-        <div class="font"><span id="font">看！我的字体变了12345-zyb</span></div>
-        <div><span id="checkfont">看！我的字体变了12345-zyb</span></div>
+        <div class="font">     <span id="font">看!我的字体变了12345-zyb看!我的字体变了12345-zyb</span></div>
+        <div>             <span id="checkfont">看!我的字体变了12345-zyb看!我的字体变了12345-zyb</span></div>
 
         <script>
             // 入栈比值
@@ -79,13 +84,15 @@
                     document.getElementById("font").classList = value;
                     // 每100毫秒检查一次是否加载
                     var checkFont = setInterval(function () {
-                        console.log();
+                        
                         var curWidth = document.getElementById("font").offsetWidth;
+                        //console.log(checkWidth,curWidth);
                         if (curWidth != checkWidth) {
                             document.getElementById("loadding").style.visibility = "hidden";
                             document.getElementById("font").style.visibility = "visible";
+                           // clearInterval(checkFont)
                         }
-                       // clearInterval(checkFont)
+                       // 
                     }, 100);
                 }
             }
