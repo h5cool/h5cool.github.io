@@ -27,9 +27,9 @@
 .font {
     font-size: 30px;
 }
-
 #checkfont {
     font-size: 30px;
+    visibility: hidden;
 }
 
 #loadding {
