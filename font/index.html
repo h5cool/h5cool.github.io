@@ -85,6 +85,7 @@
                     // 每100毫秒检查一次是否加载
                     var checkFont = setInterval(function () {
                         var curWidth = document.getElementById("font").offsetWidth;
+                        console.log(checkWidth,curWidth);
                         if (curWidth != checkWidth) {
                             document.getElementById("loadding").style.visibility = "hidden";
                             document.getElementById("font").style.visibility = "visible";
