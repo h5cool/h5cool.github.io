@@ -39,8 +39,11 @@
             let index = this.selectedIndex,
                 value = this.options[index].value,
                 text = this.options[index].text;
+            console.log(+ new Date());
             document.getElementById("font").classList = value;
+            console.log(+ new Date());
             document.getElementById("setfont").innerHTML = text;
+            console.log(+ new Date());
         }
     </script>
 </body>

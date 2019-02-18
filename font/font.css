@@ -60,16 +60,16 @@
     src: url('font/柳公权柳体.ttf')
 }
 
-@font-face {
-    font-family: huawenxingkai;
-    src: url('font/华文行楷.ttf');
-}
+
 
 @font-face {
     font-family: Arial;
     src: url('font/Arial.ttf'),
 }
-
+@font-face {
+    font-family: huawenxingkai;
+    src: url('font/华文行楷.ttf');
+}
 @font-face {
     font-family: Calibri;
     src: url("font/Calibri.ttf")
