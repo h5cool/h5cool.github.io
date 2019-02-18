@@ -44,6 +44,7 @@
         <script>
             // 入栈比值
             var valueStack = [];
+
             function checkOnce(value) {
                 if (valueStack.length < 1) {
                     valueStack.push(value);
@@ -84,12 +85,11 @@
                     // 每100毫秒检查一次是否加载
                     var checkFont = setInterval(function () {
                         var curWidth = document.getElementById("font").offsetWidth;
-                        console.log(checkWidth,curWidth);
                         if (curWidth != checkWidth) {
                             document.getElementById("loadding").style.visibility = "hidden";
                             document.getElementById("font").style.visibility = "visible";
                         }
-                       //clearInterval(checkFont)
+                        clearInterval(checkFont)
                     }, 100);
                 }
             }
