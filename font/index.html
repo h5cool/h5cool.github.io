@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>字体测试@font-face</title>
-    <link rel="stylesheet" href="font.css?v=0.3" />
+    <link rel="stylesheet" href="font.css?v=0.13" />
 </head>
 <style>
     #checkfont {
@@ -73,6 +73,7 @@
                         value = this.options[index].value,
                         text = this.options[index].text,
                         isTrue = checkOnce(index);
+                    console.log(valueStack);
                     if (!isTrue) {
                         return
                     }

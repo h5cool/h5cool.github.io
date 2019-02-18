@@ -27,57 +27,62 @@
 .font {
     font-size: 30px;
 }
-#checkfont{
+
+#checkfont {
     font-size: 30px;
 }
-#loadding{
+
+#loadding {
     margin-top: 220px;
     visibility: hidden;
 }
+
 @font-face {
     font-family: weiruanyahei;
-    src: url('font/微软雅黑.ttf'),
+    src: url('font/微软雅黑.ttf');
 }
 
 @font-face {
     font-family: fangsong;
-    src: url('font/仿宋.ttf'),
+    src: url('font/仿宋.ttf');
 }
 
 @font-face {
     font-family: kaiti;
-    src: url('font/楷体.ttf'),
+    src: url('font/楷体.ttf');
 }
 
 
 @font-face {
     font-family: lvshu;
-    src: url('font/隶书.TTF'),
+    src: url('font/隶书.TTF');
 }
 
 @font-face {
     font-family: youyuan;
-    src: url('font/幼圆.TTF')
+    src: url('font/幼圆.TTF');
 }
 
 @font-face {
     font-family: liugongquan;
-    src: url('font/柳公权柳体.ttf')
+    src: url('font/柳公权柳体.ttf');
 }
 
 
 
 @font-face {
     font-family: Arial;
-    src: url('font/Arial.ttf'),
+    src: url('font/Arial.ttf');
 }
+
 @font-face {
     font-family: huawenxingkai;
     src: url('font/华文行楷.TTF');
 }
+
 @font-face {
     font-family: Calibri;
-    src: url("font/Calibri.ttf")
+    src: url("font/Calibri.ttf");
 }
 
 @font-face {
@@ -134,4 +139,3 @@
 .TimesNewRoman {
     font-family: TimesNewRoman;
 }
- 
