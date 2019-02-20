@@ -4,14 +4,21 @@
  * @author:leinov
  * @date:2019-02-18
  */
-
+.index{
+    width: 80%;
+    margin: auto;
+}
 .main {
     padding: 30px 100px;
     width: 80%;
     margin: auto;
     max-width: 980px;
 }
-
+#ff-hi-load{
+    position: fixed;
+    right:0;
+    top:0;
+}
 #select {
     position: relative;
     border: 1px solid #ddd;
@@ -57,6 +64,7 @@
 
 @font-face {
     font-family: lvshu;
+    
     src:url('https://yy-s.zuoyebang.cc/static/lemon/font/ls.TTF'); /*url('font/隶书.TTF');*/
 }
 
