@@ -1,10 +1,3 @@
-<!--
-    @file: font
-    @desc:设置font-face字体
-    @author:leinov
-    @date:2019-02-18
--->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,45 +5,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>字体测试@font-face</title>
+    <title>Document</title>
     <link rel="stylesheet" href="font.css?v=0.15" />
-    <script src="font.js"></script>
+  
 </head>
 
 <body>
-    <div class="index">
-        <h1>关于字体方案的思考</h1>
-        <h2>页面上关于字体显示的几种情况</h2>
+    <div class="main">
+        选择字体:
+        <select id="select" style="top: 100%;">
+            <option value="weiruanyahei">微软雅黑</option>
+            <option value="fangzhengqingke">方正清刻本悦宋简体</option>
+            <option value="fzzdhjt">方正正大黑简体</option>
+            <option value="liugongquan">柳公权柳体</option>
+            <option value="huawenxingkai">华文行楷</option>
+            <option value="kaiti">楷体</option>
+            <option value="fangsong">仿宋</option>
+            <option value="youyuan">幼圆</option>
+            <option value="lvshu">隶书</option>
+            <option value="hwxw">华文新魏</option>
+            <option value="Arial">Arial</option>
+            <option value="Calibri">Calibri</option>
+            <option value="ComicSansMS">Comic Sans MS</option>
+            <option value="TimesNewRoman">Times New Roman</option>
+        </select>
+        <div id="loadding">字体加载中.......</div>
+        <div class="font"><span id="font">看!我的字体变了12345-zyb看!我的字体变了12345-zyb</span></div>
+        <div><span id="checkfont">看!我的字体变了12345-zyb看!我的字体变了12345-zyb</span></div>
 
-        <ul  class="lvshu">
-            <li>1.打开自己的某个课件的时候</li>
-            <li>2.打开别人分享的某个课件的时候</li>
-            <li>3.编辑课件选择字体的时候</li>
-        </ul>
+        <script>
+            // 入栈比值
+            var valueStack = [];
 
+            function checkOnce(value) {
+                if (valueStack.length < 1) {
+                    valueStack.push(value);
+                    return null;
+                } else if (valueStack.length == 1) {
+                    if (valueStack[0] === value) {
+                        return null;
+                    }
+                    valueStack.push(value);
+                    return true;
+                } else {
+                    valueStack.shift();
+                    valueStack.push(value);
+                    if (valueStack[0] === valueStack[1]) {
+                        return null;
+                    } else {
+                        return true;
+                    }
+                }
+            }
+            // 字体切换
+            function changeFont() {
+                document.getElementById("select").onclick = function (event) {
+                    let index = this.selectedIndex,
+                        value = this.options[index].value,
+                        text = this.options[index].text,
+                        isTrue = checkOnce(index);
 
-        <p>前两种方式都是浏览模式，可以使用font-display来优化处理， </p>
+                    if (!isTrue) {
+                        return
+                    }
+                    document.getElementById("font").style.visibility = "hidden";
+                    document.getElementById("loadding").style.visibility = "visible";
+                    // 设置比较字宽度
+                    var checkWidth = document.getElementById("checkfont").offsetWidth;
+                    // 加载字体
+                    document.getElementById("font").classList = value;
+                    // 每100毫秒检查一次是否加载
+                    var checkFont = setInterval(function () {
 
-        <p class="kaiti">
-            <ul>
-                <li>页面渲染完成就显示备用字体</li>
-                <li>或等待3秒再显示，如果网络字体加载完成则显示网络字体，否则显示备用字体至网络字体加载完成。</li>
-            </ul>
-       
-            编辑课件的选择字体这块儿跟页面展示不同，不能使用font-display来设置，因为用户切换后希望看到的是切换后的字体，如果显示备用字体会给用户以为切换不成功的错觉，用户会一直点击。可行方案是切换加载字体时loadding或者显示空白，等字体下载成功后再显示。
-        </p>
-        但是这种体验也不好
-        <ul>
-            <li>1.用户不能立即看到字体的切换</li>
-            <li>2.有loadding和闪烁 体验不好</li>
-        </ul>
-
-        <p>
-            目前想到一个更好的方案是，在页面加载完成后，异步的悄悄的下载字体，这样在用户使用的时候字体就已经下载完成，这样在切换时就可以有很好的体验，如果用户不手动清理，字体将一直被缓存。
-        </p>
-        <div><a href="eidt.html">编辑页</a></div>
-    </div>
-    
+                        var curWidth = document.getElementById("font").offsetWidth;
+                        //console.log(checkWidth,curWidth);
+                        if (curWidth != checkWidth) {
+                            document.getElementById("loadding").style.visibility = "hidden";
+                            document.getElementById("font").style.visibility = "visible";
+                            // clearInterval(checkFont)
+                        }
+                    }, 100);
+                }
+            }
+            changeFont();
+        </script>
 </body>
 
 </html>
